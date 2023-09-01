@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-main-background);
+}
+:root{
+    --color-text: #fff;
+    --color-main-background: #7dee32e5;
+    --color-line-color :rgba(0, 0, 0, 0.64);
+    --color-blue:
+    rgba(0, 116, 182, 1);
+    --color-purpole :rgba(189, 0, 255, 1);
+    --color-pitch :
+    rgba(255, 169, 67, 1);
+    --color-red-background :rgba(255, 0, 0, 1);
+    --scissors-backgroundOne: hsl(39, 89%, 49%);
+    --scissors-backgroundTwo: hsl(40, 84%, 53%);
+    --paperbackgrounOne: hsl(230, 89%, 62%);
+    --paper-backgrounTwo: hsl(230, 89%, 65%);
+    --rock-1: hsl(349, 71%, 52%);
+    --rock-2: hsl(349, 70%, 56%);
+    --shadow-light: #00000026;
+    --shadow-med: #0000004d;
+}
+.container{
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+.header{
+    display: flex;
+    gap: 12rem;
+    align-items: center;
+    height: 150px;
+    border: 4px solid var(--color-text);
+    border-radius: 15px;
+    padding: 1rem 1.4rem 1rem 2rem;
+    opacity: 1;
+}
+.box_header{
+    letter-spacing: 2px;
+    color: var(--color-text);
+}
+.points{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.points_computer{
+    background-color: var(--color-text);
+    height: 100px;
+    width: 150px;
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.score_number_computer{
+    font-size: 50px;
+    font-weight: 700;
+}
+.points_user{
+    background-color: var(--color-text);
+    height: 100px;
+    width: 150px;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+.score_number_user{
+    font-size: 50px;
+    font-weight: 700;
+}
+
+/* =================== game section start ================================================ */
+
+.game{
+    position: relative;
+    display: grid;
+    grid-template-columns: (repeat(2,1fr));
+    grid-template-areas: "rock scissor"
+    "paper paper";
+    place-items: center;
+    height: 25rem;
+    opacity: 1;
+}
+.game::before{
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 3%;
+    top:22%;
+    background: url(./images/Line\ 1.svg);
+    z-index: -1;
+}
+.choice_btn[data-choice = "rock"]{
+    grid-area: rock;
+}
+
+.choice_btn[data-choice = "scissor"]{
+    grid-area: scissor;
+}
+
+.choice_btn[data-choice = "paper"]{
+    grid-area: paper;
+}
+
+.choice_btn{
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+.choice{
+    display: grid;
+    place-items: center;
+    background-color: var(--color-text);
+    border-radius: 50%;
+    height: 7rem;
+    width: 7rem;
+}
+
+#line2{
+    position: absolute;
+    width: 10rem;
+    height: 3%;
+    rotate: 45deg;
+    top: 47%;
+    left: 12rem;
+    z-index: -5;
+    background-color:var(--color-line-color) ;
+}
+#line3{
+    position: absolute;
+    width: 10.5rem;
+    height: 3%;
+    rotate:140deg;
+    top: 47.5%;
+    left: 22rem;
+    background-color:var(--color-line-color) ;
+    z-index: -5;
+}
+.rock{
+    border: 10px solid var(--color-blue);
+}
+.scissor{
+    border: 10px solid var(--color-purpole);
+}
+.paper{
+    border: 10px solid var(--color-pitch);
+}
+.choice-btn {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+.choice {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    background: #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    box-shadow: inset 0 0.5rem var(--shadow-light);
+}
+.choice::before,
+.choice::after {
+  content: "";
+  position: absolute;
+  left: -15%;
+  top: -15%;
+  width: 130%;
+  height: 130%;
+  border-radius: 50%;
+  z-index: -1;
+}
+.choice::after {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+.choice-btn:focus .choice::after {
+    opacity: 1;
+    box-shadow: 0 0 0 2rem #223351;
+    z-index: -2;
+}
+.choice.paper::before {
+    background: linear-gradient(to bottom, var(--paperbackgrounOne), var(--paper-backgrounTwo));
+    box-shadow: 0 0.5rem var(--shadow-med), 0 0.5rem var(--paper-backgrounTwo);
+}
+.choice.scissor::before {
+    background: linear-gradient(to bottom, var(--scissors-backgroundOne), var(--scissors-backgroundTwo));
+    box-shadow: 0 0.5rem var(--shadow-med), 0 0.5rem var(--scissors-backgroundTwo);
+}
+.choice.rock::before {
+    background: linear-gradient(to bottom, var(--rock-1), var(--rock-2));
+    box-shadow: 0 0.5rem var(--shadow-med), 0 0.5rem var(--rock-2);
+}
+.choice img {
+    transform: scale(1.5);
+}
+.choice-btn[data-choice="paper"] {
+    grid-area: paper;
+}
+.choice-btn[data-choice="scissor"] {
+    grid-area: scissor;
+}
+.choice-btn[data-choice="rock"] {
+    grid-area: rock;
+}
+
+/* ================= rules ==================== */
+.rules_section h2{
+    text-align: center;
+}
+ul{
+    list-style: none;
+}
+ul li{
+    margin-top:15px ;
+}
+.rules_section{
+    background-color: rgba(0, 68, 41, 1);
+    position: absolute;
+    right: 5%;top: 35%;
+    width: 300px;
+    height: 350px;
+    border: 10px solid var(--color-text);
+    color: var(--color-text);
+    border-radius: 10px;
+    padding: 10px;
+}
+.rules-btn{
+    position: absolute;
+    right: 2%;
+    top: 93%;
+    border-radius: 5px;
+    background: none;
+    outline: none;
+    width: 8%;
+    height: 2rem;
+    color: var(--color-text);
+    border: 3px solid #fff;
+    cursor: pointer;
+}
+.cancle-btn{
+    position: absolute;
+    right: 4%;
+    top: 31%;
+    outline: none;
+    background: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid var(--color-text);
+    position: absolute;
+    background-color: var(--color-red-background);
+    z-index: 999;
+
+    cursor: pointer;
+}
+.rules-upper-part{
+    opacity: 0;
+    transition: 0.3s ease;
+}
+.rules-upper-part_active{
+    opacity: 1;
+}
+
+
+
+/* =========  game logic section ====================== */
+.results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    grid-template-areas:
+      "you-title ai-title"
+      "you-picked ai-picked";
+    max-width: 1000px;
+    margin: 0 auto;
+    opacity: 1;
+}
+.results__heading{
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    padding: 3rem 0 2rem;
+    color: var(--color-text);
+}
+.results__result{
+    min-width: 10rem;
+    min-height: 10rem;
+    background: rgba(22, 33, 61, 0.1);
+    border-radius: 50%;
+    transform: scale(1.0);
+    z-index: -1;
+}
+.results__heading:first-of-type {
+    grid-area: you-title;
+}
+.results__heading:last-of-type {
+    grid-area: ai-title;
+}
+.results__result:first-of-type {
+    grid-area: you-picked;
+}
+.results__result:last-of-type {
+    grid-area: ai-picked;
+}
+.hidden{
+    display: none;
+}
+.results_winner{
+    grid-area: result-winner;
+    display: grid;
+    place-items: center;
+}
+.results_text{
+    font-size: 2.5rem;
+    padding-bottom: 1.5rem;
+    color: var(--color-text);
+}
+.play-again{
+    background-color: #fff;
+    align-items: center;
+    width: 8rem;
+    outline: none;
+    color: rgba(107, 107, 107, 1);
+    outline: none;
+    border-radius: 5px;
+    font-weight: 700;
+    height: 2rem;
+    font-size: 15px;
+    letter-spacing: 0.1rem;
+    border: 3px solid #fff;
+    cursor: pointer;
+}
+.results.show-winner{
+    grid-template-columns: (repeat(3,1fr));
+    grid-template-areas: 
+    "you-title.ai-title"
+    "you-picked result-winner ai-picked";
+}
+.winner .choice::after{
+    box-shadow: 0 0 0 20px  rgba(46, 154, 37, 0.49), 0 0 0 40px rgba(132, 250, 121, 0.312), 0 0 0 80px rgba(165, 247, 157, 0.2);
+    opacity: 1;
+
+}
+
+
+/* next button */
+.hurray{
+
+    width: 800px;
+    height: 700px;
+
+
+}
+.stars{
+    position: absolute;
+    top: 2rem;
+    left: 10rem;
+}
+.hurray{
+    position: absolute;
+    top: 0rem;
+    left: 15rem;
+}
+.trophy{
+    position: absolute;
+    left: 20rem;
+    top: 10rem;
+}
+.text{
+    color: var(--color-text);
+    letter-spacing: 5px;
+}
+#headingone{
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 5px;
+}
+.text{
+    position: absolute;
+    top: 25rem;
+    left: 17rem;
+}
+.play-again-btn{
+    position: absolute;
+    top: 35rem;
+    left: 22rem;
+    border: 3px solid var(--color-text);
+    outline: none;
+    background-color: var(--color-text);
+    width: 10rem;
+    height: 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.next-btn{
+    position: absolute;
+    right: 12%;
+    top: 93%;
+    border-radius: 5px;
+    background: none;
+    outline: none;
+    width: 8%;
+    height: 2rem;
+    color: var(--color-text);
+    border: 3px solid #fff;
+    cursor: pointer;
+}
+
+.results_text_common {
+    color: var(--color-text);
+
+}

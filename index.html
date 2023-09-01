@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- ======================= HEADER ================================= -->
+
+        <header class="header">
+            <div class="box_header">
+                <h2>ROCK</h2>
+                <h2>PAPER</h2>
+                <h2>SCISSOR</h2>
+            </div>
+            <div class="points">
+                <div class="points_computer">
+                    <div class="score_title_computer">COMPUTER SCORE</div>
+                    <div class="score_number_computer" id="s2">0</div>
+                </div>
+                <div class="points_user">
+                    <div class="score_title_user">YOUR SCORE</div>
+                    <div class="score_number_user" id="s1">0</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- =======================SECTION START =========================== -->
+
+        <section class="game">
+            <button class="choice_btn" data-choice="rock">
+                <div class="choice rock ">
+                    <img src="./images/icon-rock.svg" alt="rock">
+                </div>
+            </button>
+            <button class="choice_btn" data-choice="scissor">
+                <div class="choice scissor">
+                    <img src="./images/icon-scissor.svg" alt="scissor">
+                </div>
+            </button>
+            <button class="choice_btn" data-choice="paper">
+                <div class="choice paper">
+                    <img src="./images/icon-paper.svg" alt="paper">
+                </div>
+            </button>
+            <div id="line2"></div>
+            <div id="line3"></div>
+        </section>
+    </div>
+
+    <section class="results hidden ">
+        <h2 class="results__heading ">YOU PICKED</h2>
+        <h2 class="results__heading ">PC PICKED</h2>
+        <div class="results__result "></div>
+        <div class="results_winner hidden ">
+            <h3 class="results_text "></h3>
+            <h3 class="results_text_common  hidden"></h3>
+            <button class="play-again">Play again</button>
+        </div>
+        <div class="results__result"></div>
+    </section>
+
+
+
+
+    <!-- ============ RULES BUTTON SECTION ============================== -->
+    <section class="rules">
+        <section class="rules-upper-part">
+            <button class="cancle-btn">
+                <div>
+                    <img src="./images/X.svg" alt="" class="cancle_img">
+                </div>
+            </button>
+            <div class="rules_section">
+                <h2>Game Rules</h2>
+                <ul>
+                    <li><img src="./img/Rectangle 5.svg" alt="">  Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                    <li><img src="./img/Rectangle 5.svg" alt="">  Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                    <li><img src="./img/Rectangle 5.svg" alt="">  Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+                    <li><img src="./img/Rectangle 5.svg" alt="">  If both players lay down the same hand, each player lays down another hand</li>
+                </ul>
+            </div>
+        </section>
+        <button class="rules-btn">RULES</button>
+        <button class="next-btn hidden">NEXT</button>
+        
+    </section>
+
+    <!-- ======= next button section ============= -->
+    <section class="hurray-section">
+        <div class="hurray hidden">
+            <div class="allimages">
+                <img src="./images/stars.png" alt="" class="stars">
+                <img src="./images/trophy.png" alt="" class="trophy">
+            </div>
+            <div class="text">
+                <h1 id="headingone">HURRAY!!</h1>
+                <H2>YOU WON THE GAME</H2>
+            </div>
+            <button class="play-again-btn">PLAY AGAIN</button>
+        </div>
+    </section>
+
+
+
+
+
+
+
+ <script src="./script.js"></script>
+</body>
+</html>
+
+
