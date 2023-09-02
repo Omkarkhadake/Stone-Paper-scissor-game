@@ -9,6 +9,8 @@ Your challenge is to build out this Rock, Paper, Scissors game and get it lookin
 ## video
 https://www.loom.com/share/f1e6b8cf55fb4dfe8b99803bdf070888?sid=e94e76dc-214e-447a-9b75-b38bd3dc95d3
 
+<iframe width="640" height="360" src="https://www.loom.com/embed/f1e6b8cf55fb4dfe8b99803bdf070888?sid=1567f97a-4432-4268-a891-0f41524a1b3f" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 ### Features List:
 
 1. The game is designed for two players, one is you as a player and the other opponent is your computer.
