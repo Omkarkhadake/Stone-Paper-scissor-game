@@ -6,6 +6,9 @@ Figma Link: https://www.figma.com/file/PcJKaVsqoRk8g9xKdD3DQu/Cuvette-Task?node-
 
 Your challenge is to build out this Rock, Paper, Scissors game and get it looking as close to the design as possible.
 
+## video
+https://www.loom.com/share/f1e6b8cf55fb4dfe8b99803bdf070888?sid=e94e76dc-214e-447a-9b75-b38bd3dc95d3
+
 ### Features List:
 
 1. The game is designed for two players, one is you as a player and the other opponent is your computer.
